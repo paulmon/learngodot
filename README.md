@@ -33,6 +33,43 @@ The Rust version should reach feature parity with the C# version before adding n
 - `undo`
 - `restart`
 
+## Development Workflow
+
+### Daily Loop
+1. Open Godot editor for the C# project:
+
+```powershell
+./open-csharp-project.ps1
+```
+
+2. Make gameplay/content changes in `grid-shift-csharp/`.
+3. Run and validate behavior in Godot editor.
+4. Build from terminal to catch compile errors early:
+
+```powershell
+dotnet build ./grid-shift-csharp/grid-shift.sln
+```
+
+### Useful Commands
+
+Check .NET SDK:
+
+```powershell
+dotnet --version
+```
+
+Build C# project directly:
+
+```powershell
+dotnet build ./grid-shift-csharp/grid-shift.csproj
+```
+
+### Pre-Commit Checklist
+- C# project builds without errors.
+- Core controls (`move_*`, `undo`, `restart`) still work.
+- No regression in crate push, undo, restart, and win condition.
+- Progression/save behavior still works for tested levels.
+
 ## Core Constraints
 - Tile/grid logic uses integer grid coordinates.
 - Crates are push-only, one at a time.

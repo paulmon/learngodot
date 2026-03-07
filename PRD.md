@@ -68,36 +68,36 @@
 
 ### A0. Environment Setup
 
-- [ ] Install Godot 4.x (standard .NET build)
-- [ ] Install .NET SDK compatible with Godot version
-- [ ] Create project: `grid-shift-csharp`
-- [ ] Configure source control and `.gitignore`
-- [ ] Verify scripts compile and run in editor
+- [x] Install Godot 4.x (standard .NET build)
+- [x] Install .NET SDK compatible with Godot version
+- [x] Create project: `grid-shift-csharp`
+- [x] Configure source control and `.gitignore`
+- [x] Verify scripts compile and run in editor
 
 ### A1. Godot Fundamentals Through a Tiny Prototype
 
-- [ ] Create a test scene with `Node2D`, `TileMapLayer`, and `CharacterBody2D` (or equivalent movement node)
-- [ ] Implement grid movement with input actions (`move_up/down/left/right`)
-- [ ] Wire one signal end-to-end (button or area trigger)
-- [ ] Load one level scene and reset it
-- [ ] Write short dev notes on scene tree, signals, and resources
+- [x] Create a test scene with `Node2D`, `TileMapLayer`, and `CharacterBody2D` (or equivalent movement node)
+- [x] Implement grid movement with input actions (`move_up/down/left/right`)
+- [x] Wire one signal end-to-end (button or area trigger)
+- [x] Load one level scene and reset it
+- [x] Write short dev notes on scene tree, signals, and resources
 
 ### A2. Vertical Slice (One Complete Puzzle Level)
 
-- [ ] Implement tile-based collision and movement rules
-- [ ] Add Sokoban crate push mechanic (push-only, no pulling)
-- [ ] Add goal tiles and "all crates on goals" win condition
-- [ ] Add victory trigger and level-complete screen
-- [ ] Add restart and undo (at least 1 step)
-- [ ] Playtest until the slice feels clear and reliable
+- [x] Implement tile-based collision and movement rules
+- [x] Add Sokoban crate push mechanic (push-only, no pulling)
+- [x] Add goal tiles and "all crates on goals" win condition
+- [x] Add victory trigger and level-complete screen
+- [x] Add restart and undo (at least 1 step)
+- [x] Playtest until the slice feels clear and reliable
 
 ### A3. Core Systems
 
-- [ ] Refactor to reusable game state model (player position, crate states, goal states)
-- [ ] Implement multi-step undo stack
-- [ ] Implement level loader from data files/resources
-- [ ] Implement simple level validation checks (crate count matches goal count, reachable layout sanity)
-- [ ] Add game manager for level progression
+- [x] Refactor to reusable game state model (player position, crate states, goal states)
+- [x] Implement multi-step undo stack
+- [x] Implement level loader from data files/resources
+- [x] Implement simple level validation checks (crate count matches goal count, reachable layout sanity)
+- [x] Add game manager for level progression
 
 ### A4. Content Production
 
@@ -196,6 +196,6 @@
 ## 11. Immediate Next Actions
 
 - [ ] Install Godot 4.x .NET and verify C# script execution
-- [ ] Create `grid-shift-csharp` repo and baseline scene
-- [ ] Implement grid movement + restart in one test level
-- [ ] Confirm this baseline before touching Rust setup
+- [x] Create `grid-shift-csharp` repo and baseline scene
+- [x] Implement grid movement + restart in one test level
+- [x] Confirm this baseline before touching Rust setup
