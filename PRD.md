@@ -108,11 +108,11 @@
 
 ### A5. UX and Polish
 
-- [ ] Main menu + level select + pause menu
-- [ ] Save/load unlocked progress
-- [ ] Add SFX hooks for move, crate push, goal complete, win, fail
-- [ ] Add background music loop
-- [ ] Add simple transitions and visual feedback for interactions
+- [x] Main menu + level select + pause menu
+- [x] Save/load unlocked progress
+- [x] Add SFX hooks for move, crate push, goal complete, win, fail
+- [x] Add background music loop
+- [x] Add simple transitions and visual feedback for interactions
 
 ### A6. Stability and Ship Readiness
 

@@ -12,6 +12,7 @@ public partial class PlayerController : Node2D
     [Export] public NodePath CratesRootPath = "../Crates";
     [Export] public NodePath GoalsRootPath = "../Goals";
     [Export] public NodePath WinLabelPath = "../UI/WinLabel";
+    [Export] public NodePath AudioManagerPath = "../AudioManager";
     [Export(PropertyHint.File, "*.txt")] public string LevelFilePath = "res://levels/level01.txt";
 
     private GameState _gameState;
@@ -19,11 +20,13 @@ public partial class PlayerController : Node2D
     private Dictionary<Vector2I, Node2D> _cratesByPos = new();
     private Stack<GameState> _undoStack = new();
     private Label _winLabel;
+    private AudioManager _audioManager;
     private bool _isLevelComplete;
 
     public override void _Ready()
     {
         _winLabel = GetNodeOrNull<Label>(WinLabelPath);
+        _audioManager = GetNodeOrNull<AudioManager>(AudioManagerPath);
         SetWinLabelVisible(false);
 
         if (!LoadLevel(LevelFilePath))
@@ -70,12 +73,23 @@ public partial class PlayerController : Node2D
 
         var snapshot = _gameState.Clone();
         if (!_gameState.TryApplyMove(delta, out var movedCrate, out var crateFrom, out var crateTo))
+        {
+            _audioManager?.PlayFail();
             return;
+        }
 
         _undoStack.Push(snapshot);
 
+        _audioManager?.PlayMove();
+
         if (movedCrate)
+        {
             MoveCrateNode(crateFrom, crateTo);
+            _audioManager?.PlayPush();
+
+            if (_gameState.GoalPositions.Contains(crateTo))
+                _audioManager?.PlayGoalComplete();
+        }
 
         SnapToGrid();
         UpdateWinState();

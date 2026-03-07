@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/GameBootstrap.cs" id="1_3jf2x"]
 [ext_resource type="Script" path="res://scripts/PlayerController.cs" id="2_rv7ls"]
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="3_2m8t0"]
+[ext_resource type="Script" path="res://scripts/PauseMenuController.cs" id="4_wy0js"]
+[ext_resource type="Script" path="res://scripts/AudioManager.cs" id="5_1048m"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_3jf2x")
@@ -13,6 +15,13 @@ script = ExtResource("2_rv7ls")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("3_2m8t0")
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("5_1048m")
+
+[node name="BgmPlayer" type="AudioStreamPlayer" parent="AudioManager"]
+
+[node name="SfxPlayer" type="AudioStreamPlayer" parent="AudioManager"]
 
 [node name="Body" type="Polygon2D" parent="Player"]
 color = Color(0.95, 0.72, 0.2, 1)
@@ -61,3 +70,60 @@ offset_top = 16.0
 offset_right = 240.0
 offset_bottom = 46.0
 text = "Level Complete"
+
+[node name="LevelLabel" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 46.0
+horizontal_alignment = 2
+theme_override_colors/font_color = Color(0.86, 0.9, 0.96, 0.95)
+text = "Level 1/12"
+
+[node name="ControlsHint" type="Label" parent="UI"]
+anchors_preset = 3
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -34.0
+offset_right = 520.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(0.86, 0.9, 0.96, 0.92)
+text = "W/A/S/D Move   Z Undo   R Restart   Esc Pause"
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+script = ExtResource("4_wy0js")
+
+[node name="Panel" type="ColorRect" parent="PauseMenu"]
+visible = false
+offset_left = 180.0
+offset_top = 90.0
+offset_right = 620.0
+offset_bottom = 390.0
+color = Color(0.07, 0.1, 0.14, 0.92)
+
+[node name="VBox" type="VBoxContainer" parent="PauseMenu/Panel"]
+offset_left = 60.0
+offset_top = 40.0
+offset_right = 380.0
+offset_bottom = 260.0
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="PauseMenu/Panel/VBox"]
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/Panel/VBox"]
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="PauseMenu/Panel/VBox"]
+text = "Restart Level"
+
+[node name="LevelSelectButton" type="Button" parent="PauseMenu/Panel/VBox"]
+text = "Level Select"
+
+[node name="MainMenuButton" type="Button" parent="PauseMenu/Panel/VBox"]
+text = "Main Menu"
