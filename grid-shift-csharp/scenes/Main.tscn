@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/GameBootstrap.cs" id="1_3jf2x"]
+[ext_resource type="Script" path="res://scripts/PlayerController.cs" id="2_rv7ls"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_3jf2x")
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(64, 64)
+script = ExtResource("2_rv7ls")
+
+[node name="Body" type="Polygon2D" parent="Player"]
+color = Color(0.95, 0.72, 0.2, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

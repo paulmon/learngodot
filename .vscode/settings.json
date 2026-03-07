@@ -1,0 +1,21 @@
+{
+  "terminal.integrated.profiles.windows": {
+    "pwsh": {
+      "path": "${env:ProgramFiles}\\PowerShell\\7\\pwsh.exe",
+      "args": [
+        "-NoLogo"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "pwsh",
+  "terminal.integrated.automationProfile.windows": {
+    "path": "${env:ProgramFiles}\\PowerShell\\7\\pwsh.exe",
+    "args": [
+      "-NoLogo"
+    ]
+  },
+  "powershell.powerShellDefaultVersion": "PowerShell (x64)",
+  "powershell.powerShellAdditionalExePaths": {
+    "PowerShell (x64)": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+  }
+}

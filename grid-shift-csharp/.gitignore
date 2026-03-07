@@ -1,0 +1,20 @@
+# Godot
+.godot/
+.import/
+export_presets.cfg
+
+# .NET / C#
+bin/
+obj/
+*.user
+*.suo
+*.tmp
+*.DotSettings.user
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
