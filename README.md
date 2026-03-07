@@ -16,6 +16,10 @@ The Rust version should reach feature parity with the C# version before adding n
 - `open-csharp-project.ps1`: helper script to open the C# project
 - `grid-shift-csharp/`: Godot C# implementation
 
+## Docs
+- `docs/dev-notes.md`: implementation notes on scene tree, signals, and level resources.
+- `docs/playtest-notes.md`: current prototype playtest results and follow-up checks.
+
 ## Quick Start (C#)
 1. Install Godot 4.x .NET build.
 2. Ensure .NET SDK is installed (`dotnet --version`).

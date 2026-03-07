@@ -101,10 +101,10 @@
 
 ### A4. Content Production
 
-- [ ] Design 12 levels with gradual mechanic difficulty
-- [ ] Categorize levels by concept (intro push, corridor pressure, multi-crate planning, tight-space endgame)
-- [ ] Run playtesting pass for soft locks and ambiguity
-- [ ] Tune at least 3 levels based on test feedback
+- [x] Design 12 levels with gradual mechanic difficulty
+- [x] Categorize levels by concept (intro push, corridor pressure, multi-crate planning, tight-space endgame)
+- [x] Run playtesting pass for soft locks and ambiguity
+- [x] Tune at least 3 levels based on test feedback
 
 ### A5. UX and Polish
 

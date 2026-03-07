@@ -39,7 +39,7 @@ public partial class PlayerController : Node2D
         {
             _gameState = _startState.Clone();
             _undoStack.Clear();
-            SyncCratesToState();
+            RebuildCratesFromState();
             SnapToGrid();
             UpdateWinState();
             return;
@@ -87,7 +87,7 @@ public partial class PlayerController : Node2D
             return;
 
         _gameState = _undoStack.Pop();
-        SyncCratesToState();
+        RebuildCratesFromState();
 
         SnapToGrid();
         UpdateWinState();
@@ -402,28 +402,39 @@ public partial class PlayerController : Node2D
         crate.GlobalPosition = GridToWorld(to);
     }
 
-    private void SyncCratesToState()
+    private void RebuildCratesFromState()
     {
-        var crateNodes = _cratesByPos.Values.OrderBy(node => node.Name).ToList();
-        var targetPositions = _gameState.CratePositions
-            .OrderBy(position => position.Y)
-            .ThenBy(position => position.X)
-            .ToList();
-
-        if (crateNodes.Count != targetPositions.Count)
-        {
-            GD.PushWarning("Crate node count does not match crate state count.");
+        if (GetNodeOrNull<Node2D>(CratesRootPath) is not Node2D cratesRoot)
             return;
-        }
 
+        ClearChildren(cratesRoot);
         _cratesByPos.Clear();
-        for (var i = 0; i < crateNodes.Count; i++)
+
+        foreach (var position in _gameState.CratePositions.OrderBy(p => p.Y).ThenBy(p => p.X))
         {
-            var crate = crateNodes[i];
-            var position = targetPositions[i];
+            var crate = CreateCrateNode(position);
+            cratesRoot.AddChild(crate);
             crate.GlobalPosition = GridToWorld(position);
             _cratesByPos[position] = crate;
         }
+    }
+
+    private Node2D CreateCrateNode(Vector2I position)
+    {
+        var crateNode = new Node2D { Name = $"Crate_{position.X}_{position.Y}", Position = GridToWorld(position) };
+        var crateVisual = new Polygon2D
+        {
+            Color = new Color(0.78f, 0.45f, 0.21f, 1f),
+            Polygon = new Vector2[]
+            {
+                new Vector2(-12, -12),
+                new Vector2(12, -12),
+                new Vector2(12, 12),
+                new Vector2(-12, 12)
+            }
+        };
+        crateNode.AddChild(crateVisual);
+        return crateNode;
     }
 
     private void SnapToGrid()

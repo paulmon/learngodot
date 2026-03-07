@@ -7,7 +7,17 @@ public partial class GameManager : Node
     public Godot.Collections.Array<string> LevelFiles = new()
     {
         "res://levels/level01.txt",
-        "res://levels/level02.txt"
+        "res://levels/level02.txt",
+        "res://levels/level03.txt",
+        "res://levels/level04.txt",
+        "res://levels/level05.txt",
+        "res://levels/level06.txt",
+        "res://levels/level07.txt",
+        "res://levels/level08.txt",
+        "res://levels/level09.txt",
+        "res://levels/level10.txt",
+        "res://levels/level11.txt",
+        "res://levels/level12.txt"
     };
     [Export] public int CurrentLevelIndex = 0;
 
