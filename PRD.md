@@ -116,11 +116,11 @@
 
 ### A6. Stability and Ship Readiness
 
-- [ ] Create test checklist (movement, crate push rules, undo, reset, completion, save/load)
-- [ ] Run full pass on all 12 levels
-- [ ] Fix high-severity bugs first (crashes, progression blockers, bad saves)
+- [x] Create test checklist (movement, crate push rules, undo, reset, completion, save/load)
+- [x] Run full pass on all 12 levels
+- [x] Fix high-severity bugs first (crashes, progression blockers, bad saves)
 - [ ] Build exportable desktop version
-- [ ] Write short postmortem: what was easy/hard in C# + Godot
+- [x] Write short postmortem: what was easy/hard in C# + Godot
 
 ## 7. Task Plan B: Rebuild the Same Game in Rust (Feature Parity)
 

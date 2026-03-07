@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Script" path="res://scripts/GameBootstrap.cs" id="1_3jf2x"]
 [ext_resource type="Script" path="res://scripts/PlayerController.cs" id="2_rv7ls"]
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="3_2m8t0"]
 [ext_resource type="Script" path="res://scripts/PauseMenuController.cs" id="4_wy0js"]
 [ext_resource type="Script" path="res://scripts/AudioManager.cs" id="5_1048m"]
+[ext_resource type="AudioStream" path="res://audio/bgm_loop.wav" id="6_f6v8d"]
+[ext_resource type="AudioStream" path="res://audio/move.wav" id="7_2t1vv"]
+[ext_resource type="AudioStream" path="res://audio/push.wav" id="8_h9b9m"]
+[ext_resource type="AudioStream" path="res://audio/goal.wav" id="9_jk3z0"]
+[ext_resource type="AudioStream" path="res://audio/win.wav" id="10_zw1n4"]
+[ext_resource type="AudioStream" path="res://audio/fail.wav" id="11_ua4f2"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_3jf2x")
@@ -18,6 +24,12 @@ script = ExtResource("3_2m8t0")
 
 [node name="AudioManager" type="Node" parent="."]
 script = ExtResource("5_1048m")
+BackgroundMusic = ExtResource("6_f6v8d")
+MoveSfx = ExtResource("7_2t1vv")
+PushSfx = ExtResource("8_h9b9m")
+GoalSfx = ExtResource("9_jk3z0")
+WinSfx = ExtResource("10_zw1n4")
+FailSfx = ExtResource("11_ua4f2")
 
 [node name="BgmPlayer" type="AudioStreamPlayer" parent="AudioManager"]
 

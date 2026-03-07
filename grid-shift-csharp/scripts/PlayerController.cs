@@ -154,6 +154,7 @@ public partial class PlayerController : Node2D
             return false;
 
         var text = file.GetAsText();
+
         if (!TryParseLevelText(text, out var playerStart, out var walls, out var crates, out var goals))
             return false;
 
