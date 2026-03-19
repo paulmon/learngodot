@@ -119,17 +119,17 @@
 - [x] Create test checklist (movement, crate push rules, undo, reset, completion, save/load)
 - [x] Run full pass on all 12 levels
 - [x] Fix high-severity bugs first (crashes, progression blockers, bad saves)
-- [ ] Build exportable desktop version
+- [x] Build exportable desktop version
 - [x] Write short postmortem: what was easy/hard in C# + Godot
 
 ## 7. Task Plan B: Rebuild the Same Game in Rust (Feature Parity)
 
 ### B0. Rust Tooling Setup
 
-- [ ] Create project: `grid-shift-rust`
-- [ ] Install Rust toolchain (`rustup`, stable toolchain)
-- [ ] Add and configure Godot Rust bindings for Godot 4
-- [ ] Verify Godot can load Rust extension and run a simple scripted node
+- [x] Create project: `grid-shift-rust`
+- [x] Install Rust toolchain (`rustup`, stable toolchain)
+- [x] Add and configure Godot Rust bindings for Godot 4
+- [x] Verify Godot can load Rust extension and run a simple scripted node
 
 ### B1. Porting Strategy Before Coding
 
@@ -195,7 +195,10 @@
 
 ## 11. Immediate Next Actions
 
-- [ ] Install Godot 4.x .NET and verify C# script execution
+- [x] Install Godot 4.x .NET and verify C# script execution
 - [x] Create `grid-shift-csharp` repo and baseline scene
 - [x] Implement grid movement + restart in one test level
 - [x] Confirm this baseline before touching Rust setup
+- [x] Build exportable desktop version (close out A6)
+- [x] Start Rust phase B0: create `grid-shift-rust` and validate a simple extension node in Godot
+- [ ] Start Rust phase B1: freeze C# features and document C# to Rust architecture mapping

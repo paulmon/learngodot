@@ -1,0 +1,6 @@
+.godot/*
+!.godot/extension_list.cfg
+.import/
+rust/target/
+*.tmp
+*.log
