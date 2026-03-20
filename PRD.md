@@ -133,12 +133,12 @@
 
 ### B1. Porting Strategy Before Coding
 
-- [ ] Freeze C# version features (no new mechanics)
-- [ ] Document architecture map:
+- [x] Freeze C# version features (no new mechanics)
+- [x] Document architecture map:
 	- C# class -> Rust struct/module equivalent
 	- Signals/events -> Rust callback/event wiring
 	- Resource/data formats shared across versions
-- [ ] Define parity checklist from the C# version
+- [x] Define parity checklist from the C# version
 
 ### B2. Re-implement Core Gameplay
 
@@ -201,4 +201,5 @@
 - [x] Confirm this baseline before touching Rust setup
 - [x] Build exportable desktop version (close out A6)
 - [x] Start Rust phase B0: create `grid-shift-rust` and validate a simple extension node in Godot
-- [ ] Start Rust phase B1: freeze C# features and document C# to Rust architecture mapping
+- [x] Start Rust phase B1: freeze C# features and document C# to Rust architecture mapping
+- [ ] Start Rust phase B2: port `GameState` + movement/push + undo/restart behavior
