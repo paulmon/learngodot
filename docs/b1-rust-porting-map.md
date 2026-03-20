@@ -104,7 +104,7 @@ Project: Grid Shift
 
 ### Content Parity
 
-- [ ] Rust loader accepts all 12 existing level files without format changes.
+- [x] Rust loader accepts all 12 existing level files without format changes.
 - [ ] Rust run-through completed for levels 1-12 with no progression blockers.
 
 ### Scene/Flow Parity

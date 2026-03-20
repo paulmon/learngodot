@@ -1,5 +1,14 @@
 use godot::prelude::*;
 
+pub mod game_state;
+pub mod grid_pos;
+pub mod level_catalog;
+pub mod level_loader;
+pub mod level_runtime;
+
+#[cfg(test)]
+mod logic_tests;
+
 struct GridShiftRustExtension;
 
 #[gdextension]

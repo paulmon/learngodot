@@ -142,9 +142,9 @@
 
 ### B2. Re-implement Core Gameplay
 
-- [ ] Rebuild grid movement and collision logic in Rust
-- [ ] Rebuild crate pushing and goal-completion logic
-- [ ] Rebuild victory conditions, restart, and undo stack
+- [x] Rebuild grid movement and collision logic in Rust
+- [x] Rebuild crate pushing and goal-completion logic
+- [x] Rebuild victory conditions, restart, and undo stack
 - [ ] Confirm behavior matches C# version level-by-level
 
 ### B3. Re-implement Systems and Content
@@ -202,4 +202,5 @@
 - [x] Build exportable desktop version (close out A6)
 - [x] Start Rust phase B0: create `grid-shift-rust` and validate a simple extension node in Godot
 - [x] Start Rust phase B1: freeze C# features and document C# to Rust architecture mapping
-- [ ] Start Rust phase B2: port `GameState` + movement/push + undo/restart behavior
+- [x] Start Rust phase B2: port `GameState` + movement/push + undo/restart behavior
+- [ ] Validate Rust behavior against C# across all 12 levels
