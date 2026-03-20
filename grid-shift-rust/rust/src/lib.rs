@@ -5,6 +5,7 @@ pub mod grid_pos;
 pub mod level_catalog;
 pub mod level_loader;
 pub mod level_runtime;
+pub mod rust_game_controller;
 
 #[cfg(test)]
 mod logic_tests;
